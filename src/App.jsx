@@ -11,7 +11,7 @@ function App() {
   useEffect(function () {
     const fetchData = async () => {
       try {
-        const res = await fetch(`https://restcountries.com/v3.1/${countryCode}`);
+        const res = await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`);
         const data = await res.json();
         setData(data);
 
@@ -19,7 +19,6 @@ function App() {
         console.log(error);
       }
     }
-
 
     fetchData();
   }, [])
