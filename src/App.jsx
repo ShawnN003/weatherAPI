@@ -9,7 +9,7 @@ function App() {
   const [countryData, setData] = useState();
 
   useEffect(function () {
-    fetch(`https://restcountries.com/v3.1/${countryCode}`)
+    fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
       .then(res => res.json())
       .then(data => setData(data))
   }, [])
