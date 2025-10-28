@@ -1,5 +1,5 @@
-export default function Item() {
-    return(
+export default function Item(prop) {
+    return (
         <>
             <p>Hello</p>
         </>
