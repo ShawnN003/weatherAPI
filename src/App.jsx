@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Item from './components/Item'
 import './App.css'
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
   return (
     <div>
       <Header />
-
+      <Item/>
       <Footer />
     </div>
   )
