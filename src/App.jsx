@@ -9,26 +9,16 @@ function App() {
   const [countryData, setData] = useState();
 
   useEffect(function () {
-    const fetchData = async () => {
-      try {
-        const res = await fetch(`https://restcountries.com/v3.1/${countryCode}`);
-        const data = await res.json();
-        setData(data);
-
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-
-    fetchData();
+    fetch(`https://restcountries.com/v3.1/${countryCode}`)
+      .then(res => res.json())
+      .then(data => setData(data))
   }, [])
 
   return (
     <div>
-      <Header/>
+      <Header />
 
-      <Footer/>
+      <Footer />
     </div>
   )
 }
