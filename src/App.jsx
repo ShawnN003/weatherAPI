@@ -22,7 +22,6 @@ function App() {
   return (
     <div>
       <Header />
-      <Item/>
       {!countryData ? <p>loading</p> : <Item/>} 
       <Footer />
     </div>
