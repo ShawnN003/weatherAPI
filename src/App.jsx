@@ -23,7 +23,7 @@ function App() {
     <div>
       <Header />
       <Item/>
-      {!countryData && <p>loading</p>}
+      (!countrydata ? <p>loading</p> : <Item/>) 
       <Footer />
     </div>
   )
