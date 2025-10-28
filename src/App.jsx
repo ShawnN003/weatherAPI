@@ -10,15 +10,20 @@ function App() {
   const [countryData, setData] = useState();
 
   useEffect(function () {
-    fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
-      .then(res => res.json())
-      .then(data => setData(data))
+    try {
+      fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
+        .then(res => res.json())
+        .then(data => setData(data))
+    } catch (error) {
+      console.log(error);
+    }
   }, [])
 
   return (
     <div>
       <Header />
       <Item/>
+      {!countryData && <p>loading</p>}
       <Footer />
     </div>
   )
