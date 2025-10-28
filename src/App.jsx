@@ -5,7 +5,24 @@ import Footer from './components/Footer'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [countryCode, setCode] = useState("co");
+  const [countryData, setData] = useState();
+
+  useEffect(function () {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(`https://restcountries.com/v3.1/${countryCode}`);
+        const data = await res.json();
+        setData(data);
+
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+
+    fetchData();
+  }, [])
 
   return (
     <div>
