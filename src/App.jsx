@@ -6,12 +6,12 @@ import Item from './components/Item'
 import './App.css'
 
 function App() {
-  const [countryCode, setCode] = useState("co");
+  const [countryRegion, setRegion] = useState("co");
   const [countryData, setData] = useState();
 
   useEffect(function () {
     try {
-      fetch(`https://restcountries.com/v3.1/region/${countryCode}`)
+      fetch(`https://restcountries.com/v3.1/alpha/${countryRegion}`)
         .then(res => res.json())
         .then(data => setData(data))
 
