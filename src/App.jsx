@@ -14,6 +14,7 @@ function App() {
       fetch(`https://restcountries.com/v3.1/alpha/${countryRegion}`)
         .then(res => res.json())
         .then(data => setData(data))
+
     } catch (error) {
       console.log(error);
     }
