@@ -4,8 +4,17 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Item from './components/Item'
 import './App.css'
-function userInput() {
-  setRegion()
+function southClick() {
+  setRegion(countryRegion => "Southeast Europe")
+}
+function centralClick() {
+  setRegion(countryRegion => "Central Europe")
+}
+function northClick() {
+  setRegion(countryRegion => "Northen Europe")
+}
+function eastClick() {
+  setRegion(countryRegion => "Eastern Europe")
 }
 function App() {
   const [countryRegion, setRegion] = useState();
@@ -25,10 +34,10 @@ function App() {
   return (
     <div>
       <Header />
-      <label for="fname">Insert Region:{userInput()}</label>
-    
-      <input type="text" id="regionVal" name="region" value={countryRegion}></input>
-      {console.log(countryRegion)}
+      <button onClick={handleClick}>Southeast Europe</button>
+      <button onClick={handleClick}>Central Europe</button>
+      <button onClick={handleClick}>Northen Europe</button>
+      <button onClick={handleClick}>Eastern Europe</button>
       {!countryData ? <p>loading</p> : <Item country={countryData[0]} />}
       <Footer />
     </div>
