@@ -11,9 +11,10 @@ function App() {
 
   useEffect(function () {
     try {
-      fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
+      fetch(`https://restcountries.com/v3.1/region/${countryCode}`)
         .then(res => res.json())
         .then(data => setData(data))
+
     } catch (error) {
       console.log(error);
     }

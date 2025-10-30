@@ -1,13 +1,13 @@
 export default function CurrencyName(prop) {
 
-    const values = Object.values(prop.money);
+    const values = Object.values(prop);
     const currencies = values.map(data => {
-        return <p key={data.name}>{data.name} ({data.symbol})</p>
+        return <p key={data.name.common}></p>
     })
 
     return (
         <>
-            <h3>Currencies</h3>
+            <h3>Output</h3>
             {currencies}
         </>
     )
