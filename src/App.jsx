@@ -4,40 +4,29 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Item from './components/Item'
 import './App.css'
-function southClick() {
-  setRegion(countryRegion => "Southeast Europe")
-}
-function centralClick() {
-  setRegion(countryRegion => "Central Europe")
-}
-function northClick() {
-  setRegion(countryRegion => "Northen Europe")
-}
-function eastClick() {
-  setRegion(countryRegion => "Eastern Europe")
-}
+
 function App() {
   const [countryRegion, setRegion] = useState();
   const [countryData, setData] = useState();
 
   useEffect(function () {
     try {
-      fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
+      fetch(`https://restcountries.com/v3.1/alpha/${countryRegion}`)
         .then(res => res.json())
-        .then(data => setData(data))
-
+        .then((data) => setData(data))
     } catch (error) {
       console.log(error);
     }
-  }, [])
+  }, [countryRegion])
 
   return (
     <div>
       <Header />
-      <button onClick={handleClick}>Southeast Europe</button>
-      <button onClick={handleClick}>Central Europe</button>
-      <button onClick={handleClick}>Northen Europe</button>
-      <button onClick={handleClick}>Eastern Europe</button>
+      <button onClick={() => setRegion("srb")}>Southeast Europe</button>
+      <button onClick={() => setRegion("deu")}>Central Europe</button>
+      <button onClick={() => setRegion("nor")}>Northern Europe</button>
+      <button onClick={() => setRegion("pol")}>Eastern Europe</button>
+
       {!countryData ? <p>loading</p> : <Item country={countryData[0]} />}
       <Footer />
     </div>

@@ -3,7 +3,7 @@ export default function Item({ country }) {
     return (
         <div>
             <p>Hello</p>
-            <RegionName location ={country.subregion} />
+            <RegionName location ={ country } />
         </div>
     )
 }
