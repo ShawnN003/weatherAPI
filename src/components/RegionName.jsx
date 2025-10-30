@@ -1,6 +1,6 @@
-export default function RegionName(prop) {
+export default function RegionName({ location }) {
 
-    const values = Object.values(prop.money);
+    const values = Object.values(location);
     const region = values.map(data => {
         return <p key={data.name}>{data.name} ({data.symbol})</p>
     })
@@ -8,7 +8,7 @@ export default function RegionName(prop) {
     return (
         <>
             <h3>Region</h3>
-            {region}
+            {location}
         </>
     )
 }

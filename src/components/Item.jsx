@@ -1,9 +1,9 @@
 import RegionName from "./RegionName";
-export default function Item(prop) {
+export default function Item({ country }) {
     return (
         <>
             <p>Hello</p>
-            <RegionName location ={prop.country.region} />
+            <RegionName location ={country.region} />
         </>
     )
 }
