@@ -1,9 +1,9 @@
-import CurrencyName from "./CurrencyName";
+import RegionName from "./RegionName";
 export default function Item(prop) {
     return (
         <>
             <p>Hello</p>
-            <CurrencyName money={prop.country.currencies} />
+            <RegionName location ={prop.country.region} />
         </>
     )
 }
